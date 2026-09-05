@@ -361,6 +361,10 @@ a.header__value:hover {
     min-width: 0;
 }
 
+.skill-group--wide {
+    grid-column: 1 / -1;
+}
+
 .skill-group__title {
     font-size: 0.7rem;
     font-weight: 600;
@@ -407,6 +411,19 @@ a.header__value:hover {
 
 .section__half {
     min-width: 0;
+}
+
+.section--row .edu {
+    grid-template-columns: 1fr;
+    gap: 6px;
+}
+
+.section--row .edu__left {
+    text-align: left;
+    padding-right: 0;
+    flex-direction: row;
+    gap: 12px;
+    align-items: baseline;
 }
 
 /* --- Language Dots --- */
@@ -458,31 +475,59 @@ a.header__value:hover {
     margin-left: 4px;
 }
 
-/* --- Portfolio --- */
-.portfolio {
+/* --- Selected Projects --- */
+.projects-minimal {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+}
+
+.projects-minimal a {
+    min-height: 76px;
+    padding: 12px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.portfolio a {
-    padding: 5px 14px;
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 100px;
-    font-size: 0.76rem;
-    color: #555;
+    align-items: center;
+    gap: 10px;
+    color: #151b20;
+    background: #d9dde1;
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    transition: background .2s ease, color .2s ease;
 }
 
-.portfolio a:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
-    transform: translateY(-1px);
+.projects-minimal a:hover { background: #c9ced4; color: #111; }
+
+.projects-minimal img {
+    width: 42px;
+    height: 34px;
+    object-fit: contain;
+    filter: grayscale(1) brightness(.42) contrast(1.45);
+    flex: 0 0 42px;
 }
+
+.projects-minimal span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.projects-minimal strong {
+    font-size: .78rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.projects-minimal small {
+    font-size: .68rem;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.3;
+}
+
+.projects-minimal a:hover img { filter: grayscale(1) brightness(.3) contrast(1.6); }
 
 /* ==========================================
    RESPONSIVE
@@ -491,6 +536,8 @@ a.header__value:hover {
     body {
         padding: 0;
     }
+
+    .projects-minimal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .page {
         border-radius: 0;
@@ -600,12 +647,6 @@ a.header__value:hover {
     stroke: #fff;
 }
 
-.edu__details {
-    font-size: 0.82rem;
-    color: #888;
-    margin-top: 4px;
-}
-
 /* ==========================================
    PRINT / PDF
    ========================================== */
@@ -613,6 +654,12 @@ a.header__value:hover {
     .print-btn {
         display: none !important;
     }
+
+    .projects-minimal { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .projects-minimal a { min-height: 52px; padding: 7px 8px; background: #fff !important; color: #222 !important; }
+    .projects-minimal img { display: block !important; width: 26px; height: 24px; filter: grayscale(1) contrast(1.25); }
+    .projects-minimal strong { font-size: .68rem; }
+    .projects-minimal small { font-size: .62rem; color: #666 !important; }
 
     * {
         -webkit-print-color-adjust: exact !important;
@@ -800,7 +847,7 @@ a.header__value:hover {
     }
 
     .skill-groups {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 12px;
     }
 
@@ -822,7 +869,20 @@ a.header__value:hover {
     }
 
     .section--row {
+        grid-template-columns: 1fr 1fr;
         gap: 24px;
+    }
+
+    .section--row .edu {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .section--row .edu__left {
+        text-align: left;
+        padding-right: 0;
+        flex-direction: row;
+        gap: 10px;
     }
 
     .lang__name {
@@ -844,14 +904,6 @@ a.header__value:hover {
 
     .lang__label {
         font-size: 0.65rem;
-    }
-
-    .portfolio a {
-        background: #f7f7f7 !important;
-        border: 1px solid #e8e8e8 !important;
-        color: #666 !important;
-        font-size: 0.68rem;
-        padding: 3px 10px;
     }
 
     .edu {

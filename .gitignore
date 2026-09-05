@@ -1,0 +1,10 @@
+# Separate portfolio site (has its own repo)
+portfolio/
+
+# Raw source photos (cropped versions are committed)
+abdooo.png
+profile-print.jpg
+
+# OS / editor
+Thumbs.db
+.DS_Store

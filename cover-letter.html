@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cover Letter - Abdelrahman Khaled - Senior WordPress Developer">
+    <title>Cover Letter | Abdelrahman Khaled</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        .letter-content {
+            padding: 60px 80px;
+            color: #333;
+        }
+
+        .letter-date {
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .letter-salutation {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .letter-body p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .letter-closing {
+            margin-top: 40px;
+        }
+
+        .signature {
+            margin-top: 10px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .placeholder {
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .letter-content {
+                padding: 40px 24px;
+            }
+        }
+
+        @media print {
+            .letter-content {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <article class="page">
+        <!-- Reusing the same header from CV for brand consistency -->
+        <header class="header">
+            <div class="header__left">
+                <img class="header__avatar" src="profile.jpeg" alt="Abdelrahman Khaled" width="88" height="88">
+                <div class="header__info">
+                    <h1 class="header__name">Abdelrahman Khaled</h1>
+                    <p class="header__role">Senior WordPress & E-commerce Developer</p>
+                    <p class="header__sub">4+ Years | Remote-First | Open to Relocation</p>
+                </div>
+            </div>
+            <address class="header__right">
+                <div class="header__contact-item">
+                    <span class="header__value">abdo.work14@gmail.com</span>
+                </div>
+                <div class="header__contact-item">
+                    <span class="header__value">+201096381864</span>
+                </div>
+                <div class="header__contact-item">
+                    <a href="https://github.com/aabbddoo00" class="header__value">GitHub</a>
+                </div>
+            </address>
+        </header>
+
+        <div class="letter-content">
+            <div class="letter-date" id="current-date"></div>
+
+            <div class="letter-salutation">
+                Dear Hiring Manager,
+            </div>
+
+            <div class="letter-body">
+                <p>
+                    I am writing to express my interest in opportunities as a <strong>Senior WordPress Developer</strong>.
+                    With over 4 years of experience delivering 50+ high-performance websites for international clients across
+                    Qatar, Saudi Arabia, and the UAE, I have developed a strong ability to architect robust, scalable
+                    WordPress solutions that support business goals.
+                </p>
+
+                <p>
+                    In my current role at TECHLAB, I lead the development of complex Figma-to-code implementations while
+                    consistently achieving PageSpeed scores of 90+. My technical toolkit includes advanced PHP,
+                    custom plugin development, headless WordPress architectures, and multilingual WooCommerce stores.
+                    My background in <strong>Machine Learning and Computer Vision</strong> also gives me a data-driven
+                    perspective on web performance and user experience optimization.
+                </p>
+
+                <p>
+                    I am always eager to contribute to teams that value high-quality front-end craftsmanship, fast
+                    delivery, and scalable WordPress platforms. You can review my portfolio at
+                    <a href="https://github.com/aabbddoo00/portfolio" target="_blank">https://github.com/aabbddoo00/portfolio</a>.
+                </p>
+
+                <p>
+                    I would welcome the opportunity to discuss how my experience and remote-first work ethic can support
+                    your next project. Thank you for your time and consideration.
+                </p>
+            </div>
+
+            <div class="letter-closing">
+                <p>Sincerely,</p>
+                <div class="signature">Abdelrahman Khaled</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Floating Print Button -->
+    <button class="print-btn" onclick="window.print()" aria-label="Print or Save as PDF">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="8" />
+        </svg>
+        <span>Save as PDF</span>
+    </button>
+
+    <script>
+        // Set current date automatically
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', options);
+    </script>
+
+</body>
+
+</html>
