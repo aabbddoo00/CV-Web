@@ -207,6 +207,7 @@ img {
     position: relative;
     padding-right: 14px;
     margin-right: 14px;
+    white-space: nowrap;
 }
 
 .contact > *:not(:last-child)::after {
@@ -653,6 +654,91 @@ img {
 }
 
 /* ==========================================================
+   COVER LETTER
+   ========================================================== */
+.letter {
+    padding-top: 30px;
+    max-width: 72ch;
+    animation: rise 0.7s var(--ease-out) both;
+    animation-delay: 0.16s;
+}
+
+.letter__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 28px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+}
+
+.letter__to {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: right;
+}
+
+.letter__to span:first-child {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.letter__salutation {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 14px;
+}
+
+.letter__body p {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+.letter__body strong {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.letter__body a {
+    color: var(--accent);
+    border-bottom: 1px solid var(--hairline-strong);
+}
+
+.letter__closing {
+    margin-top: 26px;
+}
+
+.letter__closing p {
+    color: var(--text);
+}
+
+.letter__signature {
+    margin-top: 14px;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+}
+
+.letter__signature-role {
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* ==========================================================
    FOOTER LINE
    ========================================================== */
 .colophon {
@@ -1089,6 +1175,50 @@ img {
     .colophon {
         margin-top: 20px;
         font-size: 0.55rem;
+    }
+
+    /* Cover letter: single A4 page */
+    .page--letter .contact {
+        flex-wrap: wrap;
+    }
+
+    .page--letter .contact > * {
+        white-space: nowrap;
+    }
+
+    .letter {
+        padding-top: 16px;
+        max-width: none;
+    }
+
+    .letter__meta {
+        margin-bottom: 16px;
+        font-size: 0.6rem;
+    }
+
+    .letter__salutation {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .letter__body p {
+        font-size: 0.78rem;
+        line-height: 1.55;
+        margin-bottom: 9px;
+    }
+
+    .letter__closing {
+        margin-top: 14px;
+        font-size: 0.78rem;
+    }
+
+    .letter__signature {
+        font-size: 1.05rem;
+        margin-top: 8px;
+    }
+
+    .page--letter .colophon {
+        margin-top: 16px;
     }
 
     a[href^="http"]::after {
